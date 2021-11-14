@@ -1,0 +1,36 @@
+.box {
+    border: 2px solid rgb(219, 219, 219);
+    border-radius: 5px;
+    padding: 10px;
+    justify-content: left;
+}
+
+.title {
+    margin: auto;
+    text-align: center;
+
+}
+
+.name {
+    margin: auto;
+    text-align: left;
+
+}  
+
+.text {
+    margin: auto;
+    text-align: left;
+
+}  
+
+.time {
+    margin: auto;
+    text-align: right;
+    color: rgb(168, 168, 168);
+
+}  
+
+.rating {
+    margin: auto;
+    text-align: right;
+}  

@@ -1,0 +1,29 @@
+.main {
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+}
+
+.title {
+  margin: auto;
+  text-align: center;
+  color: brown;
+  font-size: 20px;
+  line-height: 2em;
+  max-width: 800px;
+  margin-top: 100px;
+  padding: 10px;
+}
+
+
+
+.gridContainer {
+  display: block;
+  padding: 10px;
+  margin: -15px;
+}
+
+.gridContainer > * {
+  margin: 15px;
+}
+

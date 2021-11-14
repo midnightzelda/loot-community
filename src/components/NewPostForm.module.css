@@ -1,0 +1,20 @@
+.box {
+    align-items: center;
+    padding: 20px;
+}
+
+.textfield {
+    display: inline-block;
+    padding: 10px;
+    width: 95%;
+}
+
+.button {
+    background-color: rgb(110, 212, 110);
+    border-radius: 5px;
+    padding: 5px;
+    align-items: right;
+    text-align: right;
+    justify-content: right;
+}  
+  
