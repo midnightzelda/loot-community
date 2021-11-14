@@ -15,8 +15,6 @@
   padding: 10px;
 }
 
-
-
 .gridContainer {
   display: block;
   padding: 10px;
@@ -26,4 +24,3 @@
 .gridContainer > * {
   margin: 15px;
 }
-
