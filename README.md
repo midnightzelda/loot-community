@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Loot Community Post App
+
+This project is a web app to post content, enable replies and rate posts.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

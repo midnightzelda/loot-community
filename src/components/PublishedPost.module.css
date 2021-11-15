@@ -1,32 +1,56 @@
 .box {
   border: 2px solid rgb(219, 219, 219);
   border-radius: 5px;
-  padding: 10px;
-  justify-content: left;
+  padding: 50px;
+  background: white;
 }
 
-.title {
-  margin: auto;
-  text-align: center;
+
+
+.titleWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.name {
-  margin: auto;
-  text-align: left;
-}
+.contentWrapper {
+    display: flex;
+    justify-content: space-between;
 
-.text {
-  margin: auto;
-  text-align: left;
 }
 
 .time {
-  margin: auto;
-  text-align: right;
   color: rgb(168, 168, 168);
 }
 
 .rating {
-  margin: auto;
-  text-align: right;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.rating button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rating button:first-child:hover{
+    transform: translateY(-3px);
+}
+
+.rating button:last-child:hover{
+    transform: translateY(3px);
+}
+
+.button {
+    background-color: #f1f1f1;
+    color: #333;
+
+}
+
+.newForm {
+    margin-top: 10px;
 }

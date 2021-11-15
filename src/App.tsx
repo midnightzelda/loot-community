@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import { StarterPost } from "./components/StarterPost"
 import { PublishedPost } from "./components/PublishedPost"
 import { TITLE } from "./constants"
-import { Post } from "./Model"
+import { Post } from "./model"
 
 function App() {
   const [posts, setPosts] = useState<Post[]>([])

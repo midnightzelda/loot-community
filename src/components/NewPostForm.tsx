@@ -1,34 +1,40 @@
 import style from "./NewPostForm.module.css"
-import React, { useRef, useState } from "react"
-import { Post } from "../Model"
+import React, { useState } from "react"
+import { Post } from "../model"
+
+/* Form that takes data to create a post, validates and creates a new post  */
 
 interface NewPostFormProps {
   onPostAdded: (post: Post) => void
+  className?: string
 }
 let incrementor = 0
 
-export const NewPostForm: React.FC<NewPostFormProps> = ({ onPostAdded }) => {
+export const NewPostForm: React.FC<NewPostFormProps> = ({
+  onPostAdded,
+  className,
+}) => {
   const [errors, setErrors] = useState<{ name: boolean; text: boolean }>({
     name: false,
     text: false,
   })
-  const nameRef = useRef<HTMLInputElement>(null)
-  const textRef = useRef<HTMLTextAreaElement>(null)
+  const [name, setName] = useState("")
+  const [text, setText] = useState("")
 
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault()
 
-    if (nameRef.current!.value === "" || textRef.current!.value === "") {
+    /* TODO: use a validation library and component library  */
+
+    if (name.trim() === "" || text.trim() === "") {
       setErrors({
-        name: nameRef.current!.value === "",
-        text: textRef.current!.value === "",
+        name: name.trim()  === "",
+        text: text.trim() === "",
       })
     } else {
       const id = incrementor++
       const time = new Date()
       const rating = 0
-      const name = nameRef.current!.value
-      const text = textRef.current!.value
       setErrors({
         name: false,
         text: false,
@@ -37,29 +43,33 @@ export const NewPostForm: React.FC<NewPostFormProps> = ({ onPostAdded }) => {
     }
   }
   return (
-    <form className={style.box} onSubmit={submitHandler}>
+    <form className={style.box + " " + className} onSubmit={submitHandler}>
       <div>
         <label htmlFor="username"></label>
         <input
           className={style.textfield}
           type="text"
           id="username"
-          ref={nameRef}
+          value={name}
+          onChange={e => setName(e.target.value)}
           placeholder="Name"
         />
-        {errors.name && <p>empty name</p>}
+        {errors.name && <p className={style.error}>A name is required</p>}
       </div>
       <div>
         <label htmlFor="usertext"></label>
         <textarea
           className={style.textfield}
           id="usertext"
-          ref={textRef}
+          value={text}
+          onChange={e => setText(e.target.value)}
           placeholder="Message"
         ></textarea>
-        {errors.text && <p>empty text</p>}
+        {errors.text && (
+          <p className={style.error}>A post content is required</p>
+        )}
       </div>
-      <button className={style.button} type="submit">
+      <button className={"button " + style.button} type="submit">
         Submit
       </button>
     </form>
