@@ -54,3 +54,9 @@
 .newForm {
     margin-top: 10px;
 }
+
+@media (max-width: 600px){
+    .box {
+      padding: 30px;
+    }
+}
